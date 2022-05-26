@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+.toggle {
+    position: relative;
+    display: inline-block;
+}
+.toggle input {
+    display: none;
+}
+.toggle label {
+    display: block;
+    width: 40px;
+    height: 20px;
+    text-indent: -230%; /* 라벨 텍스트 왼쪽으로 이동*/
+    user-select: none; /* 라벨 텍스트 선택 차단 */
+}
+.toggle label::before,
+.toggle label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+.toggle label::before { /* 배경 */
+    width: 40px;
+    height: 20px;
+    background-color: #dedede;
+    border-radius: 1em;
+    -webkit-transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease;/* 배경색 애니메이션*/
+}
+.toggle label::after { /* 스위치 */
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
+    -webkit-transition: left 0.25s ease;
+    transition: left 0.25s ease; /* 스위치 이동 애니메이션 */
+}
+.toggle input:checked + label::before {
+    background-color: #EF8719; /* 켠 상태 배경색 */
+}
+.toggle input:checked + label::after { /* 켠 상태 스위치 위치 */
+    left: 24px;
+}
+/* ====필터 버튼 부분==== */
+* {
+	 box-sizing: border-box;
+}
+ .lighting {
+	 position: relative;
+	 width: 100%;
+	 height: 500px;
+	 text-align: center;
+	 color: #252b37;
+	 background-color: #151823;
+	 border-radius: 3px;
+	 animation: textColor 7.2s ease infinite;
+}
+
+
+
+
+ .lighting:after {
+	 position: absolute;
+	 content: "";
+	 top: 5vw;
+	 left: 0;
+	 right: 0;
+	 z-index: -1;
+	 height: 100%;
+	 width: 100%;
+	 margin: 0 auto;
+	 transform: scale(0.75);
+	 -webkit-filter: blur(5vw);
+	 -moz-filter: blur(5vw);
+	 -ms-filter: blur(1vw);
+	 filter: blur(5vw);
+	 background: linear-gradient(270deg, #FFFFFF, #EF8719);
+	 background-size: 200% 200%;
+	 animation: animateGlow 7.2s ease infinite;
+}
+ @keyframes animateGlow {
+	 0% {
+		 background-position: 0% 50%;
+	}
+	 50% {
+		 background-position: 100% 50%;
+	}
+	 100% {
+		 background-position: 0% 50%;
+	}
+}
+ @keyframes textColor {
+	 0% {
+		 color: #EF8719;
+	}
+	 50% {
+		 color: #FFFFFF;
+	}
+	 100% {
+		 color: #EF8719;
+	}
+}
+
+.lightbox {
+ animation: blink 7.2s ease infinite;
+}
+
+@keyframes blink {
+    0% { box-shadow: 0 0 3px 0 #EF8719; }
+    50% { box-shadow: 0 0 0; }
+    100% { box-shadow: 0 0 3px 0 #EF8719; }
+}
+
+@keyframes border-pulsate {
+    0%   { border-color: rgba(0, 255, 255, 1); }
+    50%  { border-color: rgba(0, 255, 255, 0); }
+    100% { border-color: rgba(0, 255, 255, 1); }
+}
+ 
+/* ======박스라이팅====== */

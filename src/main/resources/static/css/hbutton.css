@@ -1,0 +1,34 @@
+
+#infl {
+  display: block;
+  height: 100%;
+  -webkit-animation: hue-rotate 10s linear infinite;
+          animation: hue-rotate 10s linear infinite;
+}
+
+
+@-webkit-keyframes hue-rotate {
+  from {
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes hue-rotate {
+  from {
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
